@@ -1,0 +1,7 @@
+output/
+figures/
+logs/
+renv/
+.Rhistory
+.RData
+__pycache__/

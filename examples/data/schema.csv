@@ -1,0 +1,24 @@
+file,column,type,description,allowed_values
+participants.csv,participant_id,string,Zero-padded 8-character study ID. Blank in a few rows that lost their ID upstream,
+participants.csv,sex,integer,Sex as coded in the raw export. NOT the M/F used downstream,1|2
+participants.csv,arm,string,Randomisation arm,A|B
+participants.csv,site,string,Recruiting site,LDN|AMS|UTR
+participants.csv,birth_year,integer,Year of birth,1945-2001
+participants.csv,consent_date,date,ISO date consent was given,
+visits.csv,participant_id,string,Foreign key to participants.participant_id,
+visits.csv,visit_type,string,Which visit in the protocol,baseline|followup
+visits.csv,visit_date,date,ISO date of the visit. Blank where the source system lost it,
+visits.csv,sbp,integer,Systolic blood pressure in mmHg,80-210
+visits.csv,dbp,integer,Diastolic blood pressure in mmHg,45-130
+lab_export.csv,sample_id,string,Lab sample barcode,
+lab_export.csv,participant_id,string,Foreign key to participants.participant_id,
+lab_export.csv,visit_date,date,ISO date the sample was taken. Spans 2024 and 2025,
+lab_export.csv,analyte,string,What was measured,glucose|crp|hdl
+lab_export.csv,value,float,Measured value,
+lab_export.csv,unit,string,Unit for value,mmol/L|mg/L
+example.csv,id,string,Participant ID for the exercise set. One id appears twice,
+example.csv,site,string,Recruiting site,LDN|AMS|UTR
+example.csv,arm,string,Randomisation arm,A|B
+example.csv,age,integer,Age in years. Blank for a few participants,28-84
+example.csv,baseline_sbp,integer,Systolic BP at baseline in mmHg,
+example.csv,followup_sbp,integer,Systolic BP at followup in mmHg. Blank where the visit did not happen,

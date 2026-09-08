@@ -1,0 +1,32 @@
+/* Global slide tweaks — tighten the default layout so headers sit higher
+   and content has breathing room above the footer. */
+
+.slidev-layout {
+  padding-top: 2rem !important;
+  padding-bottom: 2.25rem !important;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+}
+
+.slidev-layout h1 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.15 !important;
+}
+
+.slidev-layout h2 {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Center layout uses different padding — keep it but a touch tighter */
+.slidev-layout.\!flex {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* Mermaid diagrams should never exceed the content area */
+.slidev-layout .mermaid {
+  max-width: 100%;
+  overflow: hidden;
+}
