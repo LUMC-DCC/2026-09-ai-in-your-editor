@@ -5,3 +5,9 @@ dist
 .vite-inspect
 .remote-assets
 components.d.ts
+
+# RStudio session state — machine-local, should never be shared
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata

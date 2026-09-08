@@ -6,6 +6,25 @@
 GitHub Copilot inside **Visual Studio Code**, with R and RStudio treated as first-class, version
 control as the safety net, and FAIR research practice as the reason any of it matters.
 
+## Published
+
+<https://lumc-dcc.github.io/2026-09-ai-in-your-editor/>
+
+Every push to `main` rebuilds and redeploys via
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). Pages must be set to
+**Settings → Pages → Source: GitHub Actions** (not "Deploy from a branch").
+
+The workflow derives the base path from the repository name, so renaming the repo cannot silently
+break asset URLs. To reproduce a Pages build locally:
+
+```bash
+npx slidev build --base "/2026-09-ai-in-your-editor/" --out dist
+```
+
+Slidev emits a `404.html` that is a copy of `index.html`, which is what makes deep links like
+`/33` work on Pages — Pages serves `404.html` for unknown paths and the SPA router takes over.
+Do not delete it.
+
 ## Run it
 
 Self-contained, like the June café deck:
